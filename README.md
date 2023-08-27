@@ -10,3 +10,5 @@ https://manual.connect-cms.jp/study/facestudies/index.html
 Speech-Studyは以下のマニュアルを参照してください。  
 https://manual.connect-cms.jp/study/speechstudies/index.html  
   
+WBGTチェックは以下で説明します。  
+https://github.com/opensource-workshop/connect-study/wiki/WBGT-Check
