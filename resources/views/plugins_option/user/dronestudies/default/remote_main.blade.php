@@ -5,23 +5,23 @@
  * @copyright OpenSource-WorkShop Co.,Ltd. All Rights Reserved
  * @category DroneStudyプラグイン
  --}}
-<script src="{{url('/')}}/js/blockly/blockly_compressed.js"></script>
-<script src="{{url('/')}}/js/blockly/blocks_compressed.js"></script>
-<script src="{{url('/')}}/js/blockly/javascript_compressed.js"></script>
-<script src="{{url('/')}}/js/blockly/php_compressed.js"></script>
+<script src="{{url('/')}}/js/option/blockly/blockly_compressed.js"></script>
+<script src="{{url('/')}}/js/option/blockly/blocks_compressed.js"></script>
+<script src="{{url('/')}}/js/option/blockly/javascript_compressed.js"></script>
+<script src="{{url('/')}}/js/option/blockly/php_compressed.js"></script>
 @if (FrameConfig::getConfigValueAndOld($frame_configs, 'dronestudy_language', 'ja_hiragana') == 'ja_hiragana')
-    <script src="{{url('/')}}/js/blockly/msg/ja_hiragana.js"></script>
-    <script src="{{url('/')}}/js/blockly/msg/ja_hiragana_drone.js"></script>
+    <script src="{{url('/')}}/js/option/blockly/msg/ja_hiragana.js"></script>
+    <script src="{{url('/')}}/js/option/blockly/msg/ja_hiragana_drone.js"></script>
 {{--
 @elseif (FrameConfig::getConfigValueAndOld($frame_configs, 'dronestudy_language', 'ja_hiragana') == 'ja_hiragana_mix')
-    <script src="{{url('/')}}/js/blockly/msg/ja_hiragana_mix.js"></script>
-    <script src="{{url('/')}}/js/blockly/msg/ja_hiragana_mix_drone.js"></script>
+    <script src="{{url('/')}}/js/option/blockly/msg/ja_hiragana_mix.js"></script>
+    <script src="{{url('/')}}/js/option/blockly/msg/ja_hiragana_mix_drone.js"></script>
 --}}
 @else
-    <script src="{{url('/')}}/js/blockly/msg/ja.js"></script>
-    <script src="{{url('/')}}/js/blockly/msg/ja_drone.js"></script>
+    <script src="{{url('/')}}/js/option/blockly/msg/ja.js"></script>
+    <script src="{{url('/')}}/js/option/blockly/msg/ja_drone.js"></script>
 @endif
-<script src="{{url('/')}}/js/blockly/drone_block.js"></script>
+<script src="{{url('/')}}/js/option/blockly/drone_block.js"></script>
 
 <script type="text/javascript">
     {{-- JavaScript --}}
