@@ -27,7 +27,7 @@ DronStudyを利用する場合は、当リポジトリのblockly.zipを解凍し
 # コピー元のルートPATH
 $src_root_dir = "C:\path_to_dev_connect-cms\"
 # コピー先のルートPATH
-$dist_root_dir = "C:\path_to_connect-cms-option_dir\"
+$dist_root_dir = "C:\path_to_connect-study_dir\"
 
 ### コピー（robocopy <コピー元> <コピー先>）
 Copy-Item -Path "${src_root_dir}composer-option.json" -Destination "${dist_root_dir}"
@@ -40,7 +40,7 @@ Copy-Item -Path "${src_root_dir}composer-option.lock" -Destination "${dist_root_
 
 ```shell
 # コピー元のルートPATH
-$src_root_dir = "C:\path_to_connect-cms-option_dir\"
+$src_root_dir = "C:\path_to_connect-study_dir\"
 # コピー先のルートPATH
 $dist_root_dir = "C:\path_to_dev_connect-cms\"
 
