@@ -95,13 +95,13 @@ class WbgtDaily extends Model
         if ($wbgt >= 31) {
             return $h_start . '<span class="badge bg-danger text-white">危険</span>' . $h_end;
         } elseif ($wbgt >= 28) {
-            return $h_start . '<span class="badge bg-danger text-white">厳重注意</span>' . $h_end;
+            return $h_start . '<span class="badge text-white" style="background-color: #ff4500;">厳重注意</span>' . $h_end;
         } elseif ($wbgt >= 25) {
             return $h_start . '<span class="badge bg-warning">警戒</span>' . $h_end;
         } elseif ($wbgt >= 21) {
-            return $h_start . '<span class="badge bg-warning">注意</span>' . $h_end;
+            return $h_start . '<span class="badge" style="background-color: #00ffff;">注意</span>' . $h_end;
         } else {
-            return $h_start . '<span class="badge bg-success">ほぼ安全</span>' . $h_end;
+            return $h_start . '<span class="badge text-white" style="background-color: #0000ff;">ほぼ安全</span>' . $h_end;
         }
     }
 
