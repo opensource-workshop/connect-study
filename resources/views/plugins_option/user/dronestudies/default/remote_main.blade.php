@@ -79,7 +79,7 @@
         <select class="form-control" name="remote_user_id" onchange="javascript:submit(this.form);">
             <option value="">対象ユーザ</option>
             @foreach ($remote_users as $remote_user)
-                @if (old('remote_user_id', $remote_user->id) == $remote_user_id)
+                @if ($remote_user->id == $remote_user_id)
                     <option value="{{$remote_user->id}}" selected class="text-white bg-primary">{{$remote_user->name}}</option>
                 @else
                     <option value="{{$remote_user->id}}">{{$remote_user->name}}</option>
