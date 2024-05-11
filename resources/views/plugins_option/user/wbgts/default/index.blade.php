@@ -75,7 +75,6 @@
         <h5 class="mt-1"><span class="badge bg-primary text-white">システムの説明</span></h5>
         <ul>
             <li>このシステムでは環境省の熱中症予防情報サイトのデータを使用しています。</li>
-            <li>データはテストデータとして提供されている旨が記載されています。そのため、このシステムもテスト運用としてお使いください。</li>
             <li>環境省の熱中症予防情報サイトの暑さ指数電子情報提供サービスのURLは以下です。<br /><a href="https://www.wbgt.env.go.jp/data_service.php" target="_blank">https://www.wbgt.env.go.jp/data_service.php</a></li>
             <li>環境省の熱中症予防情報サイトのデータは3時間ごとの予測値があり、それを使用しています。</li>
             <li>データ確認時点より前の値は予測値ではなく実況値を使用しています。</li>
