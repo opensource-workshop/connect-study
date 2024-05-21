@@ -704,5 +704,9 @@ class DronestudiesPlugin extends UserPluginOptionBase
             ['frame_id' => $frame_id, 'name' => 'dronestudy_local_notrun'],
             ['value' => $request->dronestudy_local_notrun]
         );
+        FrameConfig::updateOrCreate(
+            ['frame_id' => $frame_id, 'name' => 'dronestudy_needlogin_blockview'],
+            ['value' => $request->dronestudy_needlogin_blockview]
+        );
     }
 }

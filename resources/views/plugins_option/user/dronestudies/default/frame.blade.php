@@ -112,6 +112,39 @@
             </div>
         </div>
 
+        {{-- 未ログイン時のブロック表示 --}}
+        <div class="form-group row">
+            <label class="{{$frame->getSettingLabelClass(true)}}">未ログイン時のブロック表示</label>
+            <div class="{{$frame->getSettingInputClass(true)}}">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input
+                        type="radio"
+                        value="0"
+                        id="dronestudy_needlogin_blockview_0"
+                        name="dronestudy_needlogin_blockview"
+                        class="custom-control-input"
+                        {{ FrameConfig::getConfigValueAndOld($frame_configs, 'dronestudy_needlogin_blockview', '0') === '0' ? 'checked' : '' }}
+                    >
+                    <label class="custom-control-label" for="dronestudy_needlogin_blockview_0">
+                        表示しない
+                    </label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input
+                        type="radio"
+                        value="1"
+                        id="dronestudy_needlogin_blockview_1"
+                        name="dronestudy_needlogin_blockview"
+                        class="custom-control-input"
+                        {{ FrameConfig::getConfigValueAndOld($frame_configs, 'dronestudy_needlogin_blockview', '0') === '1' ? 'checked' : '' }}
+                    >
+                    <label class="custom-control-label" for="dronestudy_needlogin_blockview_1">
+                        表示する
+                    </label>
+                </div>
+            </div>
+        </div>
+
         {{-- Submitボタン --}}
         <div class="text-center">
             <a class="btn btn-secondary mr-2" href="{{URL::to($page->permanent_link)}}#frame-{{$frame->id}}">
