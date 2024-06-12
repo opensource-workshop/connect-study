@@ -172,6 +172,7 @@
 
     startBtn.onclick = () => {
         inputArea.value = "";
+        finalTranscript = "";
         recognition.start();
     }
     stopBtn.onclick = () => {
