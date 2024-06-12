@@ -9,15 +9,16 @@
 
 @section("plugin_contents_$frame->id")
 
-    音声入力した内容をAIで音声合成できます。<br />
-    読み上げ前に「音声入力終了」を押してくださいね。<br />
-    <button type="button" class="btn btn-primary mr-2" id="start-btn">音声入力開始</button>
-    <button type="button" class="btn btn-primary mr-2" id="stop-btn">音声入力終了</button>
-    <h1 id="result-div"></h1>
-    <br />
+    <div>
+        音声入力した内容をAIで音声合成できます。<br />
+        読み上げ前に「音声入力終了」を押してくださいね。<br />
+        <button type="button" class="btn btn-primary mr-2" id="start-btn">音声入力開始</button>
+        <button type="button" class="btn btn-primary mr-2" id="stop-btn">音声入力終了</button>
+        <h1 id="result-div"></h1>
+    </div>
 
     <div>
-        <label for="textInput" class="form-label">テキスト</label>
+        <label for="textInput" class="form-label mt-3">テキスト</label>
         <textarea class="form-control" id="textInput_{{$frame->id}}" rows="10"></textarea>
     </div>
 
