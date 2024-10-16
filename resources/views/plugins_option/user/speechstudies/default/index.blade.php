@@ -15,7 +15,7 @@
     </div>
 
     <div>
-        <label for="textInput" class="form-label mt-3">声</label><br />
+        <label for="textInput" class="form-label mt-3">声（日本語）</label><br />
         <div class="custom-control custom-radio custom-control-inline">
             <input type="radio" id="VoiceId2_{{$frame->id}}" name="VoiceId_{{$frame->id}}" class="custom-control-input" value="Takumi" checked="checked">
             <label class="custom-control-label" for="VoiceId2_{{$frame->id}}">Takumi</label>
@@ -31,6 +31,26 @@
         <div class="custom-control custom-radio custom-control-inline">
             <input type="radio" id="VoiceId4_{{$frame->id}}" name="VoiceId_{{$frame->id}}" class="custom-control-input" value="Mizuki">
             <label class="custom-control-label" for="VoiceId4_{{$frame->id}}">Mizuki</label>
+        </div>
+    </div>
+
+    <div>
+        <label for="textInput" class="form-label mt-3">声（英語・米国）</label><br />
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="VoiceId_Gregory_{{$frame->id}}" name="VoiceId_{{$frame->id}}" class="custom-control-input" value="Gregory">
+            <label class="custom-control-label" for="VoiceId_Gregory_{{$frame->id}}">Gregory</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="VoiceId_Danielle_{{$frame->id}}" name="VoiceId_{{$frame->id}}" class="custom-control-input" value="Danielle">
+            <label class="custom-control-label" for="VoiceId_Danielle_{{$frame->id}}">Danielle</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="VoiceId_Kevin_{{$frame->id}}" name="VoiceId_{{$frame->id}}" class="custom-control-input" value="Kevin">
+            <label class="custom-control-label" for="VoiceId_Kevin_{{$frame->id}}">Kevin</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="VoiceId_Ivy_{{$frame->id}}" name="VoiceId_{{$frame->id}}" class="custom-control-input" value="Ivy">
+            <label class="custom-control-label" for="VoiceId_Ivy_{{$frame->id}}">Ivy</label>
         </div>
     </div>
 
