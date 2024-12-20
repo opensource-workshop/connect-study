@@ -16,7 +16,7 @@ https://github.com/opensource-workshop/connect-study/wiki/WBGT-Check
 ## Dronstudy
 
 Connect-CMS v1.8.0からBlocklyが本体に同梱されなくなりました。
-DronStudyを利用する場合は、当リポジトリのblockly.zipを解凍して、Connect-CMSのpublic/jsディレクトリに追加してください。
+DronStudyを利用する場合は、当リポジトリのblockly.zipを解凍して、Connect-CMSのpublic/js/optionディレクトリに追加してください。
 
 # オプションリポジトリ ←→ 開発環境にコピー(win)
 
