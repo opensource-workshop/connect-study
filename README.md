@@ -48,3 +48,7 @@ Copy-Item -Path "${src_root_dir}composer-option.json" -Destination "${dist_root_
 Copy-Item -Path "${src_root_dir}composer-option.lock" -Destination "${dist_root_dir}"
 ```
 </details>
+
+データベースの migration は以下のコマンドで行います。  
+php artisan migrate --path=database/migrations_option
+
