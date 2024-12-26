@@ -26,19 +26,19 @@
         <label for="textInput" class="form-label mt-3">声</label><br />
         <div class="custom-control custom-radio custom-control-inline">
             <input type="radio" id="VoiceId2_{{$frame->id}}" name="VoiceId_{{$frame->id}}" class="custom-control-input" value="Takumi" checked="checked">
-            <label class="custom-control-label" for="VoiceId2_{{$frame->id}}">Takumi</label>
+            <label class="custom-control-label" for="VoiceId2_{{$frame->id}}">Takumi（たくみ）</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
             <input type="radio" id="VoiceId1_{{$frame->id}}" name="VoiceId_{{$frame->id}}" class="custom-control-input" value="Kazuha">
-            <label class="custom-control-label" for="VoiceId1_{{$frame->id}}">Kazuha</label>
+            <label class="custom-control-label" for="VoiceId1_{{$frame->id}}">Kazuha（かずは）</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
             <input type="radio" id="VoiceId3_{{$frame->id}}" name="VoiceId_{{$frame->id}}" class="custom-control-input" value="Tomoko">
-            <label class="custom-control-label" for="VoiceId3_{{$frame->id}}">Tomoko</label>
+            <label class="custom-control-label" for="VoiceId3_{{$frame->id}}">Tomoko（ともこ）</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
             <input type="radio" id="VoiceId4_{{$frame->id}}" name="VoiceId_{{$frame->id}}" class="custom-control-input" value="Mizuki">
-            <label class="custom-control-label" for="VoiceId4_{{$frame->id}}">Mizuki</label>
+            <label class="custom-control-label" for="VoiceId4_{{$frame->id}}">Mizuki（みずき）</label>
         </div>
     </div>
 
