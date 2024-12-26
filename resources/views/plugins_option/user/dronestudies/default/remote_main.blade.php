@@ -51,6 +51,12 @@
     function code_load() {
         form_dronestudy.submit();
     }
+    // ユーザの変更
+    function change_user() {
+        let el_clear_remote_post_id = document.getElementById('clear_remote_post_id');
+        el_clear_remote_post_id.value = "on";
+        form_dronestudy.submit();
+    }
 
 </script>
 
@@ -61,6 +67,7 @@
     <input type="hidden" name="xml_text" value="">
     <input type="hidden" name="drone_methods" id="drone_methods" value="">
     <input type="hidden" name="mode" value="remote">
+    <input type="hidden" name="clear_remote_post_id" id="clear_remote_post_id" value="">
 
     @if ($dronestudy->test_mode)
         <span class="badge badge-pill badge-danger mb-3 blink">テストモード</span>
@@ -76,7 +83,7 @@
 
     <div class="form-group">
         <label class="control-label">ユーザ</label><small class="text-muted pl-2">※ 変更すると画面を読み直します。</small><br />
-        <select class="form-control" name="remote_user_id" onchange="javascript:submit(this.form);">
+        <select class="form-control" name="remote_user_id" onchange="javascript:change_user();">
             <option value="">対象ユーザ</option>
             @foreach ($remote_users as $remote_user)
                 @if ($remote_user->id == $remote_user_id)

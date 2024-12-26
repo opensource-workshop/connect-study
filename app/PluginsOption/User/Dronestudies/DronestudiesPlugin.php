@@ -269,7 +269,10 @@ class DronestudiesPlugin extends UserPluginOptionBase
         }
 
         // プログラムが選択されていたら、プログラムコードを取得する。
-        if (old("remote_user_id", $request->filled("remote_post_id"))) {
+        if ($request->filled("clear_remote_post_id") && $request->clear_remote_post_id == 'on' ) {
+            // clear_remote_post_id が on の場合は、ユーザの変更などで、プログラムコードはクリアしたい場合。
+            $post = array();
+        } elseif (old("remote_user_id", $request->filled("remote_post_id"))) {
             $post = $this->apiGetPost($dronestudy, old("remote_post_id", $request->remote_post_id));
         } else {
             $post = array();
