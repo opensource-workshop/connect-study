@@ -98,7 +98,7 @@ src_root_dir='/path_to_option_private_dir/'
 dist_root_dir='/path_to_dev_connect-cms/'
 
 # プラグイン名
-option_plugin="dronestudies"
+option_plugin="Dronestudies"
 option_plugin_controller_dir="${option_plugin}"
 # ${変数,,}はbashの機能で、全小文字に変換する
 option_plugin_resources_dir="${option_plugin,,}"
@@ -107,7 +107,7 @@ option_plugin_model_dir=$option_plugin_controller_dir
 # コントローラー
 rsync -arvz --delete "${src_root_dir}app/PluginsOption/User/${option_plugin_controller_dir}" "${dist_root_dir}app/PluginsOption/User/"
 # API
-rsync -arvz --delete "${src_root_dir}app/PluginsOption/Api/${option_plugin_controller_dir}" "${dist_root_dir}app/PluginsOption/Api/"
+rsync -arvz --delete "${src_root_dir}app/PluginsOption/Api/Dronestudy" "${dist_root_dir}app/PluginsOption/Api/"
 
 # モデル
 if [ ! -d "${dist_root_dir}app/ModelsOption/User/" ]; then
