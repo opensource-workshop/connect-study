@@ -25,10 +25,10 @@ php artisan migrate --path=database/migrations_option
 
 # オプションリポジトリ ←→ 開発環境にコピー
 
-今のところ、composer-optionをコピーするのみ記載
-
 <details>
 <summary>dev_2_option_private.ps1.example</summary>
+
+今のところ、composer-optionをコピーするのみ記載
 
 ```shell
 # コピー元のルートPATH
@@ -45,6 +45,8 @@ Copy-Item -Path "${src_root_dir}composer-option.lock" -Destination "${dist_root_
 <details>
 <summary>option_private_2_dev.ps1.example</summary>
 
+今のところ、composer-optionをコピーするのみ記載
+
 ```shell
 # コピー元のルートPATH
 $src_root_dir = "C:\path_to_connect-study_dir\"
@@ -58,6 +60,8 @@ Copy-Item -Path "${src_root_dir}composer-option.lock" -Destination "${dist_root_
 
 <details>
 <summary>sync_dev_2_option_private.sh.example</summary>
+
+今のところ、composer-optionをコピーするのみ記載
 
 ```shell
 # Connect-CMSのあるディレクトリ
@@ -83,5 +87,41 @@ dist_root_dir='/path_to_dev_connect-cms/'
 # Composer Option
 cp -f "${src_root_dir}composer-option.json" "${dist_root_dir}"
 cp -f "${src_root_dir}composer-option.lock" "${dist_root_dir}"
+
+####################################################
+### dronestudies
+### 環境構築-Linux用（外部プラグイン → Connect-CMS）
+####################################################
+# 外部プラグインのあるディレクトリ
+src_root_dir='/path_to_option_private_dir/'
+# Connect-CMSのあるディレクトリ
+dist_root_dir='/path_to_dev_connect-cms/'
+
+# プラグイン名
+option_plugin="dronestudies"
+option_plugin_controller_dir="${option_plugin}"
+# ${変数,,}はbashの機能で、全小文字に変換する
+option_plugin_resources_dir="${option_plugin,,}"
+option_plugin_model_dir=$option_plugin_controller_dir
+
+# コントローラー
+rsync -arvz --delete "${src_root_dir}app/PluginsOption/User/${option_plugin_controller_dir}" "${dist_root_dir}app/PluginsOption/User/"
+# API
+rsync -arvz --delete "${src_root_dir}app/PluginsOption/Api/${option_plugin_controller_dir}" "${dist_root_dir}app/PluginsOption/Api/"
+
+# モデル
+if [ ! -d "${dist_root_dir}app/ModelsOption/User/" ]; then
+    mkdir -p "${dist_root_dir}app/ModelsOption/User/"
+fi
+rsync -arvz --delete "${src_root_dir}app/ModelsOption/User/${option_plugin_model_dir}" "${dist_root_dir}app/ModelsOption/User/"
+
+# ビュー
+if [ ! -d "${dist_root_dir}resources/views/plugins_option/user/" ]; then
+    mkdir -p "${dist_root_dir}resources/views/plugins_option/user/"
+fi
+rsync -arvz --delete "${src_root_dir}resources/views/plugins_option/user/${option_plugin_resources_dir}" "${dist_root_dir}resources/views/plugins_option/user/"
+
+# マイグレーション
+rsync -arvz --include '*dronestudies*' --exclude '*' "${src_root_dir}database/migrations_option" "${dist_root_dir}database/"
 ```
 </details>
