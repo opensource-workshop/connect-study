@@ -51,6 +51,7 @@ class WbgtsPlugin extends UserPluginOptionBase
         // 標準関数以外で画面などから呼ばれる関数の定義
         $functions = array();
         $functions['get'] = ['viewPast'];
+        $functions['post'] = ['viewPast'];
         return $functions;
     }
 
@@ -459,7 +460,6 @@ class WbgtsPlugin extends UserPluginOptionBase
             'years' => $years,
             'select_year' => $select_year,
             'daily_all' => $daily_all,
-//            'day_groups' => $daily_all->groupBy('create_yohou_date')
         ]);
     }
 }

@@ -42,7 +42,7 @@ use App\ModelsOption\User\Wbgts\WbgtDaily;
     過去のデータが一覧で表示されます。
 </div>
 
-<form action="{{url('/')}}/plugin/wbgts/viewPast/{{$page->id}}/{{$frame_id}}#frame-{{$frame->id}}" method="get" name="form_year" class="mb-2">
+<form action="{{url('/')}}/plugin/wbgts/viewPast/{{$page->id}}/{{$frame_id}}#frame-{{$frame->id}}" method="post" name="form_year" class="mb-2">
     {{csrf_field()}}
     <select class="form-control col-md-2 col-sm-3" name="select_year" onchange="javascript:change_year();">
         <option value="">年選択</option>
