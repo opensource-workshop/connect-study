@@ -57,6 +57,8 @@
     </tbody>
     </table>
 
+    <p><a class="btn btn-info" href="{{url('/')}}/plugin/wbgts/viewPast/{{$page->id}}/{{$frame->id}}#frame-{{$frame->id}}" role="button">過去のデータを見る。</a></p>
+
     <button type="button" class="btn btn-light btn-sm border" onclick="$('#wbgt_detail_{{$frame->id}}').show(); $('#wbgt_detail_close_{{$frame->id}}').hide();">
         <i class="fas fa-angle-up"></i> 詳細を閉じる
     </button>

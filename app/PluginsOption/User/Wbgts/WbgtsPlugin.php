@@ -3,6 +3,7 @@
 namespace App\PluginsOption\User\Wbgts;
 
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\LazyCollection;
 
@@ -49,6 +50,7 @@ class WbgtsPlugin extends UserPluginOptionBase
     {
         // 標準関数以外で画面などから呼ばれる関数の定義
         $functions = array();
+        $functions['get'] = ['viewPast'];
         return $functions;
     }
 
@@ -408,5 +410,56 @@ class WbgtsPlugin extends UserPluginOptionBase
         $wbgt->delete();
 
         return;
+    }
+
+    /**
+     *  過去データの参照
+     *
+     * @param \Illuminate\Http\Request $request リクエスト
+     * @param int $page_id ページID
+     * @param int $frame_id フレームID
+     */
+    public function viewPast($request, $page_id, $frame_id, $wbgt_id)
+    {
+        // バケツの設定データを取得する。
+        $wbgt = $this->getPluginBucket($this->getBucketId());
+
+        // 過去の予報＆実績データの年を取得する。
+        $years = DB::table('wbgt_dailies')
+                   ->select(DB::raw('SUBSTRING(create_yohou_date, 1, 4) as year'))
+                   ->groupBy('year')
+                   ->orderBy('year', 'desc')
+                   ->get();
+
+        // 年の指定を取得する。
+        $select_year = $request->select_year;
+        if (empty($select_year)) {
+            $first_year = $years->first();
+            if (!empty($first_year)) {
+                $select_year = $first_year->year;
+            }
+        }
+        if (empty($select_year)) {
+            $select_year = date('Y');
+        }
+
+        // 過去の予報＆実績データを取得する。
+        $daily_all = WbgtDaily::where('wbgt_id', $this->wbgt->id)
+                              ->where('create_yohou_date', '>=', $select_year . '0101')
+                              ->where('create_yohou_date', '<=', $select_year . '1231')
+                              ->whereNotNull('wbgt_03')
+                              ->whereNotNull('wbgt_24')
+                              ->orderBy('create_yohou_date', 'asc')
+                              ->orderBy('create_yohou_time', 'asc')->get();
+
+        // 表示テンプレートを呼び出す。
+        return $this->view('past', [
+            // 表示中のバケツデータ
+            'wbgt' => $wbgt,
+            'years' => $years,
+            'select_year' => $select_year,
+            'daily_all' => $daily_all,
+//            'day_groups' => $daily_all->groupBy('create_yohou_date')
+        ]);
     }
 }
