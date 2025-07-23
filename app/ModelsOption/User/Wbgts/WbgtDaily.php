@@ -79,7 +79,7 @@ class WbgtDaily extends Model
     /**
      * レベル表示
      */
-    private function getLevelStr($wbgt, $h_num = "")
+    public static function getLevelStr($wbgt, $h_num = "")
     {
         $h_start = '';
         $h_end = '';
