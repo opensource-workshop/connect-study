@@ -360,14 +360,24 @@ class DronestudiesPlugin extends UserPluginOptionBase
             // ブロックを個別命令に変換したものを受け取る。
             $drone_methods = $request->drone_methods;
             $method_lines = explode("\n", trim($drone_methods));
+
+            // 最後の命令の後はsleepしない。（少しでも待ち時間を減らすため）
+            $method_line_count = count($method_lines);
+            $method_line_loop_count = 0;
+
             // ブロックを実行
             foreach ($method_lines as $method_line) {
+                $method_line_loop_count++;
                 $run_method = $this->cleaningMethod($method_line);
                 //\Log::debug($run_method);
                 // 可変関数が独立した変数で定義する必要があるため、配列要素から代入して使用
                 $var_method = $run_method[0];
                 $run_result[] = $var_method . "(" . $run_method[1] . ")";
                 $tello->$var_method($run_method[1]);
+                // 最終行の場合は命令実行後、すぐ終了
+                if ($method_line_loop_count >= $method_line_count) {
+                    continue;
+                }
                 // テストモードの場合は間隔無し
                 if (!$dronestudy->test_mode) {
                     sleep($dronestudy->command_interval);

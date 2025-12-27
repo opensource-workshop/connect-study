@@ -59,6 +59,10 @@
     // 実行
     function drone_run() {
 
+        if (confirm('実行します。ドローンから離れていることを確認してください。\nよろしいですか？') == false) {
+            return;
+        }
+
         let drone_methods = Blockly.PHP.workspaceToCode(workspace);
         //alert(drone_methods);
 
