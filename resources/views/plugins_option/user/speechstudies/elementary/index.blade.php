@@ -104,6 +104,11 @@
     }
 
     function speechSubmit_{{$frame->id}}() {
+
+        if (confirm('読み上げを実行します。実行後は、少しお待ちください。\nよろしいですか？') == false) {
+            return;
+        }
+
         // (1) XMLHttpRequestオブジェクトを作成
         const xhr = new XMLHttpRequest();
 
